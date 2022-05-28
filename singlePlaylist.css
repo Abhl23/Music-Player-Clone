@@ -1,0 +1,1055 @@
+/*Innovative functionality: 
+		=>  A lightbox containing the complete details of the artist appear on the screen
+		 		when clicked on the link "more" in the artist-card.
+*/
+
+
+
+:root{
+	--white: white;
+	--green: #1DB954;
+	--darkgrey: #444444;
+	--black: black;
+	--lightgrey: #80808078;
+}
+
+/*-------Common-Classes-------*/
+
+/*--------------Flex-classes--------------*/
+
+.flex {
+	display: flex;
+}
+
+.row {
+	flex-direction: row;
+}
+
+.col {
+	flex-direction: column;
+}
+
+.wrap{
+	flex-wrap: wrap;
+}
+
+.jc-start {
+	justify-content: flex-start;
+}
+
+.jc-end {
+	justify-content: flex-end;
+}
+
+.jc-center {
+	justify-content: center;
+}
+
+.jc-space-between {
+	justify-content: space-between;
+}
+
+.jc-space-around {
+	justify-content: space-around;
+}
+
+.jc-space-evenly{
+	justify-content: space-evenly;
+}
+
+.ai-start {
+	align-items: flex-start;
+}
+
+.ai-end {
+	align-items: flex-end;
+}
+
+.ai-center {
+	align-items: center;
+}
+
+/*-------Margin-class-------*/
+.mt{
+	margin-top: 8%;
+}
+
+/*-------General-Styling-------*/
+
+body{
+	background-color: var(--darkgrey);
+	background-image: url(images/bg.jpg);
+	background-blend-mode: multiply;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	overflow-x: hidden;
+}
+
+/*-------To remove the scrollbar of the body-------*/
+body::-webkit-scrollbar{
+	display: none;
+}
+
+
+/*-------To remove the default padding and margin of every element-------*/
+*{
+	padding: 0;
+	margin: 0;
+}
+
+a{
+	text-decoration: none;
+	color: var(--white);
+}
+
+/*-------Hovering on any link doesn't change its color to dark blue/purple-------*/
+a:hover{
+	color: var(--white);
+}
+
+/*-------Hovering on any fontawesome icon changes the cursor to pointer-------*/
+i:hover{
+	cursor: pointer;
+}
+
+
+/*-----------Navbar-----------*/
+
+.navbar{
+	width: 96%;
+	margin: 2%;
+}
+
+.navbar-left, .navbar-right{
+	width: 45%;
+}
+
+.navbar>div{
+	margin: 0 6px;
+}
+
+/*-------Navbar-brand-------*/
+
+.navbar-brand i{
+	font-size: 4rem;
+	color: var(--white);
+	cursor: pointer;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+/*-------Adds shadow and a rotating animation to the .navbar-brand logo on hover-------*/
+.navbar-brand i:hover{
+	box-shadow: 0 0 4px 4px var(--green);
+	animation: rotate 1.5s linear infinite;
+}
+
+/*-------Rotating animation-------*/
+@keyframes rotate{
+		0%{
+			transform: rotate(0deg);
+		}
+
+		100%{
+			transform: rotate(360deg);
+		}
+}
+
+/*-------Navbar-title-------*/
+
+.site-title{
+	font-family: sans-serif;
+	font-style: italic;
+	color: var(--white);
+	font-weight: 800;
+	cursor: pointer;
+	letter-spacing: 1px;
+}
+
+/*-------Adds color and a flashing animation to "Ninja Studios" on hover*/
+.site-title:hover{
+	color: var(--green);
+	animation: flash 0.5s linear infinite alternate;
+}
+
+/*-------Flashing animation-------*/
+@keyframes flash{
+	0%{
+		transform: scale(1);
+	}
+
+	100%{
+		transform: scale(1.2);
+	}
+}
+
+.navbar-nav{
+	color: var(--white);
+	cursor: pointer;
+	margin-left: 10% !important;
+	font-family: sans-serif;
+	font-size: 1.3rem;
+}
+
+/*-------Adds color to "Favourites" on hover-------*/
+.navbar-nav:hover{
+	color: var(--green);
+}
+
+
+/*-------Search-bar-------*/
+
+.search-bar span{
+	color: var(--white);
+	border
+}
+
+.search-bar input{
+	width: 14rem;
+	height: 2.2rem;
+	background-color: var(--darkgrey);
+	border: 2px solid var(--white);
+	border-left: none;
+	border-right: none;
+	padding: 8px 10px;
+	color: var(--white);
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+}
+
+/*-------Removes the outline when focused on the .search-bar input-------*/
+.search-bar input:focus{
+	outline: none;
+}
+
+.search-bar button{
+	font-size: 1.2rem;
+	background-color: var(--darkgrey);
+	border: 2px solid var(--white);
+}
+
+.search-bar .search-icon{
+	border-right: none;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	padding: 4.6px;
+	padding-left: 10px;
+}
+
+.search-bar .mic-icon{
+	border-left: none;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	padding: 4.6px;
+	padding-right: 10px;
+}
+
+.search-bar button i{
+	font-size: 1.2rem;
+	color: var(--white);
+}
+
+/*-------Adds color to .search-bar icons on hover-------*/
+.search-bar i:hover{
+	color: var(--green);
+}
+
+/*-------Notification-Logo-------*/
+
+.notification-logo i{
+	color: white;
+	font-size: 2rem;
+	position: relative;
+	cursor: pointer;
+}
+
+/*-------Adds color and ringing animation to the notification bell-------*/
+.notification-logo i:hover{
+	color: var(--green);
+	animation: ring 0.5s linear infinite;
+}
+
+/*-------Ringing animation-------*/
+@keyframes ring{
+	0%{
+		transform: rotate(0deg);
+	}
+
+	25%{
+		transform: rotate(30deg);
+	}
+
+	50%{
+		transform: rotate(0deg);
+	}
+
+	75%{
+		transform: rotate(-30deg);
+	}
+
+	100%{
+		transform: rotate(0deg);
+	}
+}
+
+.notification-logo .logo-btn{
+	background-color: inherit;
+	border: none;
+}
+
+/*----Gives the red dot to the Notification bell----*/
+
+.notification-logo i::after{
+	content: '';
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	background-color: red;
+	position: absolute;
+	top: 10%;
+	right: 0;
+}
+
+/*-------Display-picture-------*/
+
+.display-picture{
+	height: 4rem;
+	width: 4rem;
+	flex-shrink: 0;
+	cursor: pointer;
+}
+
+.display-picture img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+/*-------Adds shadow to the display picture on hover-------*/
+.display-picture img:hover{
+	box-shadow: 0 0 4px 4px var(--green);
+}
+
+/*-------Navbar-dropdown-------*/
+
+/*-------For hiding the dropdown hamburger icons-------*/
+.navbar-1, .navbar-2{
+	display: none;
+	position: relative;
+}
+
+/*-------Gives the position to .dropdown-menu as it has its
+ position set to absolute-----*/
+.navbar-1 .dropdown-menu, .navbar-2 .dropdown-menu{
+	top: 2.2rem;
+	width: 9rem;
+}
+
+/*-------When the input is checked the .dropdwon-menu becomes visible-------*/
+.navbar-1 input[type="checkbox"]:checked~.dropdown-menu,
+.navbar-2 input[type="checkbox"]:checked~.dropdown-menu{
+	opacity: 1;
+	transform: translateY(0px);     /*Sliding animation*/
+	pointer-events: auto;			/*So the mouse interacts with the .dropdown-menu*/
+}
+
+/*--------------Artist-details-lightbox--------------*/
+
+#lightbox-container{
+	width: 0;
+	height: 0;
+	position: fixed;		/*To make the lightbox fixed on the screen*/
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	z-index: 1;				/*To make the lightbox appear over other elements*/
+}
+
+.lightbox{
+	width: 40%;
+	height: 70%;
+	border-radius: 10px;
+	background-color: var(--black);
+	padding: 0.8rem 0.6rem;
+}
+
+#lightbox-container:target{
+	height: 100%;
+	width: 100%;
+}
+
+.lightbox-close-button a{
+	font-size: 1.2rem;
+}
+
+.lightbox-header{
+	width: 90%;
+	margin: 10px 0 0 10px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid var(--darkgrey);
+}
+
+.lightbox-header h2{
+	color: var(--green);
+	font-size: 2rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+}
+
+.lightbox-header h4{
+	color: var(--darkgrey);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+}
+
+.lightbox-body{
+	margin: 20px 0 0 5px;
+	padding: 0 15px 10px 0;
+	overflow-y: scroll;		/*For only allowing the vertical scroll*/
+}
+
+.lightbox-body p{
+	color: var(--white);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.5px;
+	line-height: 1.4rem;
+	text-align: justify;
+	margin-bottom: 10px;
+}
+
+
+
+
+/*-------content-------*/
+
+#main-content{
+	width: 95%;
+	padding-left: 3%;
+}
+
+
+/*--------------main--------------*/
+
+main{
+	width: 65%;
+	margin-bottom: 8%;
+}
+
+/*--------------artist-card--------------*/
+
+.artist-card{
+	width: 100%;
+	height: 50vh;
+	background: linear-gradient(to bottom, var(--lightgrey) 0%, grey 180%); /*Adds
+													a linear-gradient to the artist card*/
+}
+
+.artist-card .artist-image{
+	width: 40%;
+	height: 100%;
+	background-image: url(images/drake.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-shadow: 0px -50px 100px 20px var(--darkgrey) inset; /*Gives an inset shadow to
+															the artist image*/
+}
+
+.artist-card .artist-desc{
+	width: 60%;
+	height: 100%;
+	padding: 0 5%;
+	background-color: inherit;
+}
+
+.artist-desc .artist-header h2{
+	color: var(--white);
+	font-size: 1.7rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+}
+
+.artist-header h4{
+	color: var(--green);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+}
+
+.about-artist{
+	margin: 12px 0 25px;
+	color: var(--white);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	text-align: justify;
+}
+
+.about-artist a{
+	color: var(--green);
+}
+
+.artist-options button{
+	width: 8rem;
+	height: 2.5rem;
+	margin-right: 4rem;
+	color: var(--white);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	font-weight: bold;
+	border-radius: 20px;
+	border: 2px solid var(--green);
+	transition: letter-spacing 0.3s ease-in-out, background-color 0.2s ease-in-out;
+	background-color: var(--darkgrey);
+}
+
+/*-------Gives transition effects to the Play All button on hovering-------*/
+.artist-options button:hover{
+	color: var(--black);
+	background-color: var(--green);
+	cursor: pointer;
+	letter-spacing: 4px;
+	box-shadow: 0 0 4px 1px var(--green);
+}
+
+.artist-options h3{
+	color: var(--white);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	cursor: pointer;
+	transform: scale(1.0);
+	transition: all 0.3s ease-in-out;
+}
+
+/*-------Adds transition effects to "Follow" on hover-------*/
+.artist-options h3:hover{
+	color: var(--green);
+	transform: scale(1.2);
+}
+
+.artist-footer{
+	margin-top: 15px;
+	color: var(--green);
+	font-size: 0.9rem;
+	font-weight: bold;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	cursor: pointer;
+}
+
+
+/*--------------main-songs--------------*/
+
+.main-songs{
+	width: 100%;
+	margin-top: 6%;
+}
+
+.song{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 1rem 2rem;
+	margin-bottom: 1rem;
+	background-color: var(--lightgrey);
+}
+
+.song p{
+	color: var(--green);
+	font-size: 1rem;
+	font-family: sans-serif;
+	font-weight: bold;
+	letter-spacing: 0.8px;
+	margin-right: 1.5rem;
+}
+
+.song .song-image-container{
+	min-width: 6rem;
+	height: 6rem;
+	margin-right: 1.5rem;
+	position: relative;
+}
+
+.song-image{
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.play-pause{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+/*-------The play-pause div containing the play and pause icons appear on hover-------*/
+.play-pause:hover{
+	opacity: 0.8;
+	box-shadow: 0 0 4px 4px var(--green);
+	background-color: var(--lightgrey);
+}
+
+.song-desc h3{
+	color: var(--white);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+}
+
+.song-options{
+	margin-left: auto;
+	color: var(--green);
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.song-options i{
+	margin-right: 1rem;
+}
+
+
+/*--------------Play pause toggle for all Songs--------------*/
+
+/*-------I have used the input checkbox for creating an on-click trigger for
+ the dropdown menus and play-pause icons throughout the code-------*/
+
+/*-------For hiding all the input checkboxes used throughout the code-------*/
+#navbar-dropdown-1,
+#navbar-dropdown-2,
+#song-1-checkbox,
+#song-2-checkbox,
+#song-3-checkbox,
+#song-4-checkbox,
+#song-5-checkbox,
+#song-6-checkbox,
+#song-7-checkbox,
+#song-8-checkbox,
+#song-9-checkbox,
+#song-10-checkbox,
+#song-11-checkbox,
+#song-12-checkbox,
+#artist-1-checkbox,
+#artist-2-checkbox,
+#artist-3-checkbox,
+#artist-1-dropdown,
+#artist-2-dropdown,
+#artist-3-dropdown,
+#recent-1-checkbox,
+#recent-2-checkbox,
+#recent-3-checkbox,
+#recent-4-checkbox,
+#recent-5-checkbox,
+#recent-6-checkbox,
+#recent-7-checkbox,
+#playbar-play-pause{
+	display: none;
+}
+
+/*-------For hiding all the pause icon-------*/
+.song .play-pause input[type="checkbox"]+label .fa-pause,
+.artist .play-pause input[type="checkbox"]+label .fa-pause,
+.recent-song .play-pause input[type="checkbox"]+label .fa-pause,
+.playbar-play-pause-toggle .pause-icon
+{
+	display: none;
+}
+
+
+/*-------For making the pause icons visible when the respective input checkbox
+is checked--------*/
+.song .play-pause input[type="checkbox"]:checked+label .fa-pause,
+.artist .play-pause input[type="checkbox"]:checked+label .fa-pause,
+.recent-song .play-pause input[type="checkbox"]:checked+label .fa-pause,
+.main-controls .upper-part input[type="checkbox"]:checked+.playbar-play-pause-toggle .pause-icon{
+	display: flex;
+}
+
+
+/*--------For hiding the play icons when the respective input checkbox is checked------*/
+.song .play-pause input[type="checkbox"]:checked+label .fa-play,
+.artist .play-pause input[type="checkbox"]:checked+label .fa-play,
+.recent-song .play-pause input[type="checkbox"]:checked+label .fa-play,
+.main-controls .upper-part input[type="checkbox"]:checked+.playbar-play-pause-toggle .play-icon{
+	display: none;
+}
+
+
+/*--------------aside--------------*/
+
+aside{
+	width: 25%;
+	vertical-align: top;
+}
+
+.aside-content{
+	width: 100%;
+	height: 30%;
+	overflow: scroll;
+}
+
+/*--------For hiding the scrollbar of aside-content--------*/
+.aside-content::-webkit-scrollbar{
+	display: none;
+}
+
+/*--------------Similar-artists--------------*/
+
+.similar-artists, .recently-played{
+	width: 100%;
+}
+
+.similar-artists-header, .recently-played-header{
+	width: 100%;
+}
+
+.similar-artists-header h2, .recently-played-header h2{
+	color: var(--white);
+	font-size: 1.4rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+}
+
+.similar-artists-header p, .recently-played-header p{
+	margin-left: auto;
+	color: var(--green);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	cursor: pointer;
+}
+
+.similar-artists-content{
+	width: 90%;
+	margin-top: 1.7rem;
+}
+
+.artist{
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.artist-image-container{
+	min-width: 6rem;
+	height: 6rem;
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-right: 0.8rem;
+}
+
+.artist-name h3{
+	color: var(--white);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	margin-bottom: 2px;
+	cursor: pointer;	
+}
+
+.artist-name p{
+	color: var(--green);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.artist-toggle{
+	position: relative;
+	color: var(--white);
+	font-size: 1.2rem;
+	margin-left: auto;
+	margin-right: 10px;
+}
+
+/*--------Styling the dropdown menu of similar artists--------*/
+.dropdown-menu{
+	opacity: 0;
+	position: absolute;
+	right: 1%;
+	top: 1rem;
+	list-style: none;
+	background-color: var(--darkgrey);
+	width: 8rem;
+	z-index: 1;
+	transform: translateY(-10px);
+	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+	/*-------So the dropdown menu doesn't interact with the mouse when you try to click the .dropdown-toggle-------*/
+	pointer-events: none;         
+}
+
+/*--------Makes the dropdown menu visible when the 3 dots are clicked--------*/
+.artist-toggle input[type="checkbox"]:checked~.dropdown-menu{
+	opacity: 1;
+	transform: translateY(0px);
+	pointer-events: auto;
+}
+
+.artist-toggle input[type="checkbox"]:checked+label .fa-ellipsis{
+	color: var(--green);
+}
+
+.dropdown-item{
+	cursor: pointer;
+	padding: 10px 15px;
+	color: var(--white);
+	font-size: 0.9rem;
+	letter-spacing: 0.7px;
+	font-weight: 600;
+}
+
+.dropdown-item:hover{
+	background-color: var(--green);
+	color: var(--black);
+}
+
+/*--------------Recently-played--------------*/
+
+.recently-played-content{
+	width: 100%;
+	margin-top: 1.7rem;
+}
+
+.recent-song{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.5rem 0.8rem;
+}
+
+.recent-song p{
+	color: var(--green);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	margin-right: 1rem;
+}
+
+/*--------Changes the background-color of the recently played songs on hover--------*/
+.recent-song:hover{
+	background-color: var(--lightgrey);
+}
+
+.recent-song .recent-image-container{
+	width: 5rem;
+	height: 5rem;
+	flex-shrink: 0;
+	position: relative;
+	margin-right: 1rem;
+}
+
+.recent-image{
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.recent-song .recent-desc h3{
+	color: var(--white);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+}
+
+.recent-song span{
+	margin-left: auto;
+	color: var(--green);
+	font-size: 1rem;
+}
+
+
+.playbar{
+	width: 100vw;
+	height: 12vh;
+	position: fixed;		/*Fixes the position of the playbar*/
+	left: 0;
+	bottom: 0;
+	background-color: var(--darkgrey);
+	overflow: hidden;
+	padding: 4px 30px 0;
+	z-index: 2;
+}
+
+/*------------Playbar-song-panel------------*/
+
+.song-panel{
+	width: 21%;
+}
+
+.playbar-song-image{
+	width: 30%;
+	max-width: 74.17px;
+	margin-right: 30px;
+}
+
+.playbar-song-image img{
+	width: 100%;
+	max-height: 74.17px;
+	max-width: 74.17px;
+}
+
+.playbar-song-desc{
+	width: 40%;
+	overflow: hidden;
+	max-height: 37.55px;
+	margin-right: 30px;
+}
+
+.playbar-song-desc h3{
+	color: var(--white);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	animation: slide-left 5s linear infinite;
+}
+
+/*---------Sliding left animation of song title in playbar---------*/
+
+@keyframes slide-left{
+	0%{
+		margin-left: 100%;
+	}
+
+	100%{
+		margin-left: -100%;
+	}
+}
+
+.playbar-song-desc h4{
+	color: var(--green);
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.8px;
+	margin-top: 2px;
+	cursor: pointer;
+}
+
+.playbar-song-options{
+	padding-bottom: 18px;
+}
+
+.playbar-song-options span{
+	color: var(--white);
+	font-size: 1.2rem;
+	cursor: pointer;
+	margin-right: 4px;
+}
+
+.playbar-song-options i:hover{
+	color: var(--green);
+}
+
+
+/*------------Playbar-main-controls------------*/
+
+.main-controls{
+	width: 40%;
+}
+
+/*------------Upper-part-of-main-controls------------*/
+
+.upper-part i{
+	margin: 0 20px;
+	color: var(--white);
+	cursor: pointer;
+}
+
+.upper-part i:hover{
+	color: var(--green);
+}
+
+/*------------Lower-part-of-main-controls------------*/
+
+.lower-part{
+	width: 100%;
+	margin-top: 8px;
+}
+
+.lower-part #song-timeline{
+	width: 90%;
+	-webkit-appearance: none; /* Hides the slider so the custom slider can be made */
+	background-color: transparent;  /* Otherwise white in Chrome */
+}
+
+#song-timeline:focus,
+#volume-timeline:focus{
+	outline: none;  /* Removes the blue border */
+}
+
+/*------------Styling all slider tracks(song and volume)------------*/
+
+#song-timeline::-webkit-slider-runnable-track,
+#volume-timeline::-webkit-slider-runnable-track{
+	width: 100%;
+	height: 11px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px var(--black);
+	background-color: var(--green);
+	border-radius: 3px;
+	border: 0.2px solid var(--black);
+}
+
+/*------------Styling the slider thumb of song and volume timeline------------*/
+
+#song-timeline::-webkit-slider-thumb,
+#volume-timeline::-webkit-slider-thumb{
+  	-webkit-appearance: none;  /* Hides the thumb so the custom thumb can be made */
+  	height: 25px;
+  	width: 13px;
+	box-shadow: 1px 1px 1px var(--black);
+  	border: 1px solid var(--black);
+  	border-radius: 5px;
+  	background-color: var(--white);
+  	cursor: pointer;
+  	margin-top: -7px;
+}
+
+.lower-part span{
+	margin: 0 10px;
+	color: var(--white);
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+/*--------------Side-controls--------------*/
+
+.side-controls{
+	width: 23%;
+}
+
+.side-controls i{
+	color: var(--white);
+	font-size: 1.2rem;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.side-controls i:hover{
+	color: var(--green);
+}
+
+.side-controls #volume-timeline{
+	width: 40%;
+	-webkit-appearance: none;		/*Hides the volume slider so the custom slider can be made*/
+	background-color: transparent;
+	margin-right: 10px;
+}

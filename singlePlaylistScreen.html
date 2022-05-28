@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Single Playlist</title>
+	<!--Shortcut icon for the website-->
+	<link rel="shortcut icon" type="text/css" href="images/circle-play-solid.svg">
+	<!----------------Linking singlePlaylist css file---------------->
+	<link rel="stylesheet" type="text/css" href="singlePlaylist.css">
+	<!----------------Linking singlePlaylist media query css file---------------->
+	<link rel="stylesheet" type="text/css" href="mediaQuery-singlePlaylist.css">
+	<!----------------Fontawesome kit---------------->
+	<script src="https://kit.fontawesome.com/0f031655d5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<!--------------Navbar-------------->
+	<nav class="navbar flex row jc-space-between">
+		<!--------------Navbar-left-part-------------->
+		<div class="navbar-left flex row ai-center">
+			<!----------------Navbar-brand---------------->
+			<div class="navbar-brand">
+				<i class="fa-solid fa-circle-play"></i>
+			</div>
+			<!----------------Site-title---------------->
+			<div class="site-title">
+				<h2>Ninja<br>Studios</h2>
+			</div>
+			<!----------------Navigation---------------->
+			<div class="navbar-nav">
+				<p>Favourites</p>
+			</div>
+		</div>
+
+		<!--------------Navbar-right-part-------------->
+		<div class="navbar-right flex row jc-space-around ai-center">
+			<!----------------Search-bar---------------->
+			<div class="search-bar flex row ai-center">
+				<button type="button" class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+				<input type="search" name="search" placeholder="Search">
+				<button type="button" class="mic-icon"><i class="fa-solid fa-microphone"></i></button>
+			</div>
+			<!----------------Notification-bell---------------->
+			<div class="notification-logo">
+				<button type="button" class="logo-btn"><i class="fa-solid fa-bell"></i></button>
+			</div>
+			<!----------------Display-picture---------------->
+			<div class="display-picture">
+				<img src="images/dp.jpg">
+			</div>
+			<!----------------Navbar-dropdown-1---------------->
+			<div class="navbar-1">
+				<input type="checkbox" id="navbar-dropdown-1">
+				<label for="navbar-dropdown-1">
+					<i style="color: white; font-size:2rem;" class="fa-solid fa-bars"></i>
+				</label>
+				<ul class="dropdown-menu">
+					<li class="dropdown-item">Profile</li>
+
+					<li class="dropdown-item">Notifications</li>
+				</ul>	
+			</div>
+			<!----------------Navbar-dropdown-2---------------->
+			<div class="navbar-2">
+				<input type="checkbox" id="navbar-dropdown-2">
+				<label for="navbar-dropdown-2">
+					<i style="color: white; font-size:2rem;" class="fa-solid fa-bars"></i>
+				</label>
+				<ul class="dropdown-menu">
+					<li class="dropdown-item">Profile</li>
+
+					<li class="dropdown-item">Notifications</li>
+
+					<li class="dropdown-item">Search</li>
+				</ul>	
+			</div>
+		</div>
+	</nav>
+
+
+	<!--------------Artist-details-lightbox-------------->
+
+	<div id="lightbox-container">
+		<div class="lightbox flex col ai-start">
+			<div class="lightbox-close-button">
+				<a href="#">X</a>
+			</div>
+			<div class="lightbox-header">
+				<h2>Drake</h2>
+				<h4>Toronto, Canada | Hip-Hop/Rap</h4>
+			</div>
+			<div class="lightbox-body">
+				<p>A couple of years after he broke into the mainstream with 2009’s So Far Gone, Drake was browsing art in Los Angeles when a piece caught his eye: a big neon sign that read, “LESS DRAKE, MORE TUPAC.” For a minute, he felt angry, embarrassed—he wanted to walk up and rip the sign off the wall. Instead, he bought it. After all, he figured, you get someone hanging your name next to Tupac’s, even if it’s only to take a shot at it? You must be doing something right.</p>
+
+				<p>Born Aubrey Drake Graham in Toronto in 1986, Drake became—like Tupac—something of a generational voice, a prism for his pop-cultural moment. Was he an R&B singer who rapped or a rapper who sang? Was he really that sad, or just doing a bit? And if it wasn’t a bit, how could this guy—talented, intuitive, hardworking—really be so down?</p>
+
+				<p>From minute one, there was something a little different about him: He could be confessional, vulnerable, but also incredibly coarse; he could make an earnest commitment one minute (“Take Care”) and be drunk-dialing the next (“Marvins Room”); he could convince you he was an underdog from his perch on top of the world (“Started from the Bottom”). Critics—and he’s had plenty—like to point out that he started as an actor: He played Jimmy Brooks in the Canadian teen show Degrassi: The Next Generation. But most of all, he felt like a person—someone who isn’t canceled by his paradoxes, but defined by them.<p>
+
+				<p>Though the feelings remain (always feelings, big feelings), the sound—for the most part, courtesy of longtime affiliate Noah “40” Shebib—is always changing: a little dancehall here (“One Dance”), a little house there (“Passionfruit”), some old New Orleans bounce (“Nice for What”), a bit of Wu-style boom-bap (“Started from the Bottom”), some smooth, to-the-minute trap-soul (“Hotline Bling”). Like Kanye, Drake is as much a curator as he is a creator, an artist capable of arranging collaborators from a universe of styles and making them all fit into his personal vision—an approach that has made him one of the most definitive rappers and pop figures of his era. “I obviously spend a lot of time in my own world,” he told Beats 1 host Zane Lowe in 2016. “But when I do take a look at the broader scope of things, it’s often [in the studio]… Even though I don’t directly, literally address things in my music, I’ve always tried to make music that transcends gender, nationality—to try and unify people. Because that’s really what it’s about.”</p>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--------------Main-content-------------->
+
+	<div id="main-content" class="flex row jc-space-around mt">
+		<main>
+			<div class="artist-card flex">
+				<div class="artist-image"></div>
+				<div class="artist-desc flex col jc-center">
+					<div class="artist-header flex jc-space-between ai-center">
+						<span>
+							<h2>Drake</h2>
+							<h4>Hip-Hop/Rap</h4>
+						</span>
+						<span>
+							<h4>62M&nbsp;Followers</h4>
+						</span>
+					</div>
+					<div class="about-artist">
+						A couple of years after he broke into the mainstream with 2009’s So Far Gone, Drake was browsing art in Los Angeles when a piece caught his eye: a big neon sign that read, “LESS DRAKE, MORE TUPAC.” For a minute, he felt....<a style="font-size: 1.1rem;" href="#lightbox-container">more</a>
+					</div>
+					<div class="artist-options flex ai-center">
+						<button type="button">Play All</button>
+						<h3>Follow</h3>
+					</div>
+					<div class="artist-footer">
+						<span>200 Tracks | </span>
+						<span>12 Albums</span>
+					</div>
+				</div>
+			</div>
+			<div class="main-songs flex col">
+				<!--------------------Song-1-------------------->
+				<div class="song flex ai-center">
+					<p>01</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/2014fhd.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-1-checkbox">
+							<label for="song-1-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>No&nbsp;Role&nbsp;Modelz</h3>
+						<p>J Cole</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-2-------------------->
+				<div class="song flex ai-center">
+					<p>02</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/motm1.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-2-checkbox">
+							<label for="song-2-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>Alive</h3>
+						<p>Kid cudi</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-3-------------------->
+				<div class="song flex ai-center">
+					<p>03</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/gkmc.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-3-checkbox">
+							<label for="song-3-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>Money&nbsp;Trees</h3>
+						<p>Kendrick Lamar</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-4-------------------->
+				<div class="song flex ai-center">
+					<p>04</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/grodt.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-4-checkbox">
+							<label for="song-4-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>Wanksta</h3>
+						<p>50 Cent</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-5-------------------->
+				<div class="song flex ai-center">
+					<p>05</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/thacarter2.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-5-checkbox">
+							<label for="song-5-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>Fireman</h3>
+						<p>Lil Wayne</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-6-------------------->
+				<div class="song flex ai-center">
+					<p>06</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/tcd.png);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-6-checkbox">
+							<label for="song-6-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>Last&nbsp;Call</h3>
+						<p>Kanye West</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-7-------------------->
+				<div class="song flex ai-center">
+					<p>07</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/imlvol1.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-7-checkbox">
+							<label for="song-7-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>Medley:&nbsp;Intro</h3>
+						<p>Jay Z</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-8-------------------->
+				<div class="song flex ai-center">
+					<p>08</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/tlop.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-8-checkbox">
+							<label for="song-8-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>Famous</h3>
+						<p>Kanye West</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-9-------------------->
+				<div class="song flex ai-center">
+					<p>09</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/takecare.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-9-checkbox">
+							<label for="song-9-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>The&nbsp;Ride</h3>
+						<p>Drake</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-10-------------------->
+				<div class="song flex ai-center">
+					<p>10</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/astroworld.png);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-10-checkbox">
+							<label for="song-10-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>Stargazing</h3>
+						<p>Travis Scott</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-11-------------------->
+				<div class="song flex ai-center">
+					<p>11</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/clb.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-11-checkbox">
+							<label for="song-11-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+							</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>Champagne&nbsp;Poetry</h3>
+						<p>Drake</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>
+				<!--------------------Song-12-------------------->
+				<div class="song flex ai-center">
+					<p>12</p>
+					<div class="song-image-container">
+						<div style="background-image: url(images/444.jpg);" class="song-image"></div>
+						<div class="play-pause flex jc-center ai-center">
+							<input type="checkbox" id="song-12-checkbox">
+							<label for="song-12-checkbox">
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+								<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+								</label>
+						</div>
+					</div>
+					<div class="song-desc">
+						<h3>4:44</h3>
+						<p>Jay Z</p>
+					</div>
+					<div class="song-options">
+						<i class="fa-regular fa-heart"></i>
+						<i class="fa-solid fa-plus"></i>
+					</div>
+				</div>			
+			</div>
+		</main>
+
+		<!--------------aside-------------->
+
+		<aside>
+			<div class="aside-content">
+				<!----------------Similar-artists---------------->
+				<div class="similar-artists flex col ai-center">
+					<!----------------Similar artists header---------------->
+					<div class="similar-artists-header flex ai-center">
+						<h2>Similar Artists</h2>
+						<p>View All</p>
+					</div>
+					<div class="similar-artists-content flex col ai-center">
+						<!----------------Artist-1---------------->
+						<div class="artist flex row ai-center">
+							<div style="background-image:url(images/jcole.jpg);" class="artist-image-container">
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="artist-1-checkbox">
+									<label for="artist-1-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="artist-name">
+								<h3>J Cole</h3>
+								<p>Artist</p>
+							</div>
+							<div class="artist-toggle">
+								<input type="checkbox" id="artist-1-dropdown">
+								<label for="artist-1-dropdown">
+									<i class="fa-solid fa-ellipsis"></i>
+								</label>
+								<ul class="dropdown-menu">
+									<li class="dropdown-item"><i style="font-size: 1rem;" class="fa-solid fa-play"></i>&emsp;Play All</li>
+
+									<li class="dropdown-item"><i style="font-size: 1rem;" class="fa-solid fa-plus"></i>&emsp;Follow</li>
+								</ul>
+							</div>
+						</div>
+						<!----------------Artist-2---------------->
+						<div class="artist flex row ai-center">
+							<div style="background-image:url(images/lilwayne.jpg);" class="artist-image-container">
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="artist-2-checkbox">
+									<label for="artist-2-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="artist-name">
+								<h3>Lil Wayne</h3>
+								<p>Artist</p>
+							</div>
+							<div class="artist-toggle">
+								<input type="checkbox" id="artist-2-dropdown">
+								<label for="artist-2-dropdown">
+									<i class="fa-solid fa-ellipsis"></i>
+								</label>
+								<ul class="dropdown-menu">
+									<li class="dropdown-item"><i style="font-size: 1rem;" class="fa-solid fa-play"></i>&emsp;Play All</li>
+
+									<li class="dropdown-item"><i style="font-size: 1rem;" class="fa-solid fa-plus"></i>&emsp;Follow</li>
+								</ul>
+							</div>
+						</div>
+						<!----------------Artist-3---------------->
+						<div class="artist flex row ai-center">
+							<div style="background-image:url(images/theweeknd.jpg);" class="artist-image-container">
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="artist-3-checkbox">
+									<label for="artist-3-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="artist-name">
+								<h3>The Weeknd</h3>
+								<p>Artist</p>
+							</div>
+							<div class="artist-toggle">
+								<input type="checkbox" id="artist-3-dropdown">
+								<label for="artist-3-dropdown">
+									<i class="fa-solid fa-ellipsis"></i>
+								</label>
+								<ul class="dropdown-menu">
+									<li class="dropdown-item"><i style="font-size: 1rem;" class="fa-solid fa-play"></i>&emsp;Play All</li>
+
+									<li class="dropdown-item"><i style="font-size: 1rem;" class="fa-solid fa-plus"></i>&emsp;Follow</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!----------------Recently-played---------------->
+				<div class="recently-played flex col ai-center mt">
+					<!----------------Recently played header---------------->
+					<div class="recently-played-header flex ai-center">
+						<h2>Recently Played</h2>
+						<p>View All</p>
+					</div>
+					<!--------------------Recently-played-content-------------------->
+					<div class="recently-played-content">
+						<!--------------------Recent-song-1-------------------->
+						<div class="recent-song flex ai-center">
+							<p>01</p>
+							<div class="recent-image-container">
+								<div style="background-image: url(images/TheOffSeason.jpg);" class="recent-image"></div>
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="recent-1-checkbox">
+									<label for="recent-1-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="recent-desc">
+								<h3>95.South</h3>
+								<p>J Cole</p>
+							</div>
+							<span><i class="fa-regular fa-heart"></i></span>
+						</div>
+						<!--------------------Recent-song-2-------------------->
+						<div class="recent-song flex ai-center">
+							<p>02</p>
+							<div class="recent-image-container">
+								<div style="background-image: url(images/imlvol1.jpg);" class="recent-image"></div>
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="recent-2-checkbox">
+									<label for="recent-2-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="recent-desc">
+								<h3>Intro: Medley</h3>
+								<p>Jay Z</p>
+							</div>
+							<span><i class="fa-regular fa-heart"></i></span>
+						</div>
+						<!--------------------Recent-song-3-------------------->
+						<div class="recent-song flex ai-center">
+							<p>03</p>
+							<div class="recent-image-container">
+								<div style="background-image: url(images/mbdtf.jpg);" class="recent-image"></div>
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="recent-3-checkbox">
+									<label for="recent-3-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="recent-desc">
+								<h3>Runaway</h3>
+								<p>Kanye West</p>
+							</div>
+							<span><i class="fa-regular fa-heart"></i></span>
+						</div>
+						<!--------------------Recent-song-4-------------------->
+						<div class="recent-song flex ai-center">
+							<p>04</p>
+							<div class="recent-image-container">
+								<div style="background-image: url(images/takecare.jpg);" class="recent-image"></div>
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="recent-4-checkbox">
+									<label for="recent-4-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="recent-desc">
+								<h3>The Ride</h3>
+								<p>Drake</p>
+							</div>
+							<span><i class="fa-regular fa-heart"></i></span>
+						</div>
+						<!--------------------Recent-song-5-------------------->
+						<div class="recent-song flex ai-center">
+							<p>05</p>
+							<div class="recent-image-container">
+								<div style="background-image: url(images/thacarter2.jpg);" class="recent-image"></div>
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="recent-5-checkbox">
+									<label for="recent-5-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="recent-desc">
+								<h3>Fireman</h3>
+								<p>Lil Wayne</p>
+							</div>
+							<span><i class="fa-regular fa-heart"></i></span>
+						</div>
+						<!--------------------Recent-song-6-------------------->
+						<div class="recent-song flex ai-center">
+							<p>06</p>
+							<div class="recent-image-container">
+								<div style="background-image: url(images/tcd.png);" class="recent-image"></div>
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="recent-6-checkbox">
+									<label for="recent-6-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="recent-desc">
+								<h3>Last Call</h3>
+								<p>Kanye West</p>
+							</div>
+							<span><i class="fa-regular fa-heart"></i></span>
+						</div>
+						<!--------------------Recent-song-7-------------------->
+						<div class="recent-song flex ai-center">
+							<p>07</p>
+							<div class="recent-image-container">
+								<div style="background-image: url(images/gkmc.jpg);" class="recent-image"></div>
+								<div class="play-pause flex jc-center ai-center">
+									<input type="checkbox" id="recent-7-checkbox">
+									<label for="recent-7-checkbox">
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-play"></i>
+										<i style="color: white; font-size:1.5rem;" class="fa-solid fa-pause"></i>
+									</label>
+								</div>
+							</div>
+							<div class="recent-desc">
+								<h3>Money Trees</h3>
+								<p>Kendrick Lamar</p>
+							</div>
+							<span><i class="fa-regular fa-heart"></i></span>
+						</div>
+					</div>
+				</div>	
+			</div>		
+		</aside>
+	</div>
+
+	<footer>
+	<!----------------Playbar------------------>
+		<div class="playbar flex row jc-space-between ai-center">
+			<!------------------Song-panel------------------>
+			<div class="song-panel flex row jc-start ai-center">
+				<div class="playbar-song-image">
+					<img src="images/444.jpg">
+				</div>
+				<div class="playbar-song-desc">
+					<h3>4:44</h3>
+					<h4>Jay Z</h4>
+				</div>
+				<div class="playbar-song-options flex row">
+					<span><i class="fa-regular fa-heart"></i></span>
+					<span><i class="fas fa-ban"></i></span>
+				</div>
+			</div>
+			<!------------------Main-controls------------------>
+			<div class="main-controls flex col jc-space-between ai-center">
+				<!--------------Upper-part-of-main-controls-------------->
+				<div class="upper-part flex row jc-center ai-center">
+					<span><i style="font-size:1.2rem;" class="fa-solid fa-shuffle"></i></span>
+					<span><i style="font-size:1.5rem;" class="fa-solid fa-backward-step"></i></span>
+					<span>
+						<input type="checkbox" id="playbar-play-pause">
+						<label for="playbar-play-pause" class="playbar-play-pause-toggle">
+							<i style="font-size:2rem;" class="play-icon fa-solid fa-circle-play"></i>
+							<i style="font-size:2rem;" class="pause-icon fa-solid fa-circle-pause"></i>
+						</label>
+					</span>
+					<span><i style="font-size:1.5rem;" class="fa-solid fa-forward-step"></i></span>
+					<span><i style="font-size:1.2rem;" class="fa-solid fa-arrows-rotate"></i></span>
+				</div>
+				<!--------------Lower-part-of-main-contols-------------->
+				<div class="lower-part flex row jc-center ai-center">
+					<span>2:15</span>
+					<input type="range" id="song-timeline">
+					<span>4:44</span>
+				</div>
+			</div>
+			<!----------------Side-controls---------------->
+			<div class="side-controls flex jc-start ai-center">
+				<span><i class="fa-solid fa-bars"></i></span>
+				<span><i class="fa-solid fa-computer-speaker"></i></span>
+				<span><i class="fa-solid fa-volume-high"></i></span>
+				<input type="range" id="volume-timeline">
+				<span><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span>
+
+			</div>
+		</div>
+	</footer>	
+
+
+</body>
+</html>

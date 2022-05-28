@@ -1,0 +1,185 @@
+/*-----------------1300px-----------------*/
+
+@media screen and (max-width: 1300px){
+	/*-----------------Stations-----------------*/
+	.station{
+		width: 90px;
+		height: 90px;
+	}
+
+	/*-----------------Latest-english/hindi-----------------*/
+	.content{
+		flex-wrap: wrap;
+	}
+}
+
+/*-----------------1200px-----------------*/
+
+@media screen and (max-width: 1200px){
+	/*-----------------Stations-----------------*/
+	.stations-container{
+		flex-wrap: wrap;			/*Wraps the .stations-container*/
+	}
+}
+
+
+/*-----------------992px-----------------*/
+
+@media screen and (max-width: 992px){
+
+	/*------------------Popular-artists------------------*/
+	.artist-container{
+		flex-wrap: wrap;
+	}
+
+	.artist{
+		width: 7rem;
+	}
+
+	/*------------------Playbar------------------*/
+	.playbar-song-image{
+		width: 4rem;
+		flex-shrink: 0;
+	}
+
+	.playbar-song-desc{
+		width: 4rem;
+		flex-shrink: 0;
+	}
+
+	.playbar-song-options{
+		flex-wrap: wrap;
+		padding-bottom: 0;
+	}
+
+	.side-controls{
+		flex-wrap: wrap;
+		margin-right: 1.5rem;
+	}
+
+	.side-controls i{
+		margin-top: 5px;
+	}
+
+	/*------------------Queue------------------*/
+	.queue-song p, .queue-song .queue-desc h3{
+		font-size: 0.8rem;
+	}
+}
+
+
+/*-----------------880px-----------------*/
+
+@media screen and (max-width: 880px){
+	/*------------------Navbar-dropdown------------------*/
+	.navbar-1{
+		display: flex;              /*Makes the first navbar dropdown visible*/
+	}
+	.notification-logo, .display-picture{	/*Hides the notification bell and display picture*/
+		display: none;
+	}
+
+	/*------------------main/aside------------------*/
+	#main-content{
+		flex-direction: column;		/*Changes the main-content horizontal layout to vertical layout*/
+		padding: 0 2% 0 2%;
+	}
+
+	main{
+		width: 100%;
+	}
+
+	aside, .stations{
+		width: 95%;
+	}
+
+	section{
+		justify-content: center;
+	}
+
+	/*------------------Carousel------------------*/
+	.carousel{
+		height: 25vh;
+	}
+
+	.carousel-card{
+		width: 28%;
+	}
+
+	.latest-hindi{
+		margin-bottom: 8%;
+	}
+
+	/*------------------Queue------------------*/
+	.queue{
+		margin-bottom: 15%;
+	}
+
+	.queue-song p, .queue-song .queue-desc h3{
+		font-size: 1.1rem;
+	}
+
+	/*------------------Playbar------------------*/
+	.playbar-song-image{
+		width: 40%;
+	}
+
+	.playbar-song-desc{
+		width: 40%;
+	}
+
+	.playbar-song-image, .playbar-song-desc{
+		margin-right: 10px;
+	}
+}
+
+/*-----------------750px-----------------*/
+
+@media screen and (max-width: 750px){
+	/*------------------Navbar-dropdown------------------*/
+	.navbar-1, .search-bar{			
+		display: none;				/*Hides the first navbar dropdown and search bar*/
+	}
+
+	.navbar-2{
+		margin-left: auto;			/*Makes the second navbar dropdown visible*/
+		display: flex;
+	}
+
+	.navbar-2 i{
+		font-size: 2.5rem !important;
+	}
+
+	.navbar-2 .dropdown-menu{
+		top: 2.5rem;
+		width: 10rem;
+	}
+
+	/*------------------Playbar------------------*/	
+	.upper-part i{
+		margin: 0 10px;
+	}
+}
+
+
+/*-----------------600px-----------------*/
+
+@media screen and (max-width: 600px){
+	/*------------------Latest-releases------------------*/
+	.latest-content .latest-song{
+		width: 80%;
+	}
+
+	/*------------------Playbar------------------*/
+	.song-panel, .side-controls{			/*Hides the song panel and side controls in the playbar*/ 
+		display: none;
+	}
+
+	.main-controls{
+		width: 90%;
+	}
+
+	.upper-part i{
+		margin: 0 20px;
+	}
+}
